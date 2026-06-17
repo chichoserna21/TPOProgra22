@@ -22,7 +22,7 @@ public class Main {
 
         // 3. Generar Reportes y Análisis
         GeneradorReportes reportes = new GeneradorReportes(rutas, flota);
-        
+        //v
         reportes.reporteTerminales();
         rutas.identificarTerminalesDesconectadas(); // POS (Posadas) debería saltar aquí
         
