@@ -68,7 +68,7 @@ public class DiccionarioDinamico implements Diccionario {
     public int get(int key) {
         Node node = findNode(key);
         if (node == null) {
-            throw new IllegalArgumentException("La clave no existe");
+            throw new Excepcionees.ErrorClaveInexistente();
         }
         return node.value;
     }

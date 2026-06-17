@@ -72,7 +72,7 @@ public class GrafoEstatico implements Grafos {
         if (indexOne != -1 && indexTwo != -1) {
             matrizAdyacencia[indexOne][indexTwo] = weight;
         } else {
-            throw new IllegalArgumentException("Uno o ambos vertices no existen");
+            throw new Excepcionees.ErrorGrafoElementoInexistente();
         }
     }
 
@@ -102,7 +102,7 @@ public class GrafoEstatico implements Grafos {
         if (indexOne != -1 && indexTwo != -1) {
             return matrizAdyacencia[indexOne][indexTwo];
         }
-        throw new IllegalArgumentException("La arista no existe o los vertices no existen");
+        throw new Excepcionees.ErrorGrafoElementoInexistente();
     }
 
     @Override

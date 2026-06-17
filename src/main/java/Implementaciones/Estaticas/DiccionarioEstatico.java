@@ -61,7 +61,7 @@ public class DiccionarioEstatico implements Diccionario {
     public int get(int key) {
         int index = indexOfKey(key);
         if (index == -1) {
-            throw new IllegalArgumentException("La clave no existe");
+            throw new Excepcionees.ErrorClaveInexistente();
         }
         return values[index];
     }

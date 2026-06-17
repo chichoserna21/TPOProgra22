@@ -29,7 +29,6 @@ public class ColaPrioridadDinamica implements ColaConPrioridad {
         }
         return head.value;
     }
-//nmknknknlnl
     @Override
     public int getPriority() {
         if (isEmpty()) {

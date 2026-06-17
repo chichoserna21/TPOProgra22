@@ -111,7 +111,7 @@ public class GrafoDinamico implements Grafos {
             newArista.next = origen.aristas;
             origen.aristas = newArista;
         } else {
-            throw new IllegalArgumentException("Uno o ambos vertices no existen");
+            throw new Excepcionees.ErrorGrafoElementoInexistente();
         }
     }
 
@@ -163,7 +163,7 @@ public class GrafoDinamico implements Grafos {
                 currentA = currentA.next;
             }
         }
-        throw new IllegalArgumentException("La arista no existe o los vertices no existen");
+        throw new Excepcionees.ErrorGrafoElementoInexistente();
     }
 
     @Override
