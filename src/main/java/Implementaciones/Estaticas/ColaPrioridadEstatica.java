@@ -1,6 +1,6 @@
-package Implementaciones.Estaticas;
+package implementaciones.Estaticas;
 
-import Interfaces.ColaConPrioridad;
+import interfaces.ColaConPrioridad;
 
 public class ColaPrioridadEstatica implements ColaConPrioridad {
 

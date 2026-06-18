@@ -1,16 +1,16 @@
 package org.example;
 
-import Dominio.Fecha;
-import Dominio.Micro;
-import Dominio.Terminal;
-import Dominio.TipoMicro;
-import Dominio.Viaje;
-import Gestores.GestorFlota;
-import Gestores.GestorRutas;
-import Gestores.GestorViajes;
-import Implementaciones.Estaticas.ColaPrioridadEstatica;
-import Implementaciones.Estaticas.DiccionarioEstatico;
-import Implementaciones.Estaticas.GrafoEstatico;
+import dominio.Fecha;
+import dominio.Micro;
+import dominio.Terminal;
+import dominio.TipoMicro;
+import dominio.Viaje;
+import gestores.GestorFlota;
+import gestores.GestorRutas;
+import gestores.GestorViajes;
+import implementaciones.Estaticas.ColaPrioridadEstatica;
+import implementaciones.Estaticas.DiccionarioEstatico;
+import implementaciones.Estaticas.GrafoEstatico;
 
 public class CargadorDatos {
 

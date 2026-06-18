@@ -1,4 +1,4 @@
-package Excepcionees;
+package excepciones;
 
 public class ErrorClaveInexistente extends ErrorTDA {
     public ErrorClaveInexistente() {

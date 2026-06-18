@@ -1,7 +1,7 @@
-package Gestores;
+package gestores;
 
-import Dominio.Terminal;
-import Interfaces.Grafos;
+import dominio.Terminal;
+import interfaces.Grafos;
 
 public class GestorRutas {
 
@@ -116,9 +116,14 @@ public class GestorRutas {
         System.out.println("Ruta encontrada: " + sb.toString() + " (" + longitud + " paradas)");
     }
 
-    public String obtenerTerminalMasConectada() {
+    public void reportarConexiones() {
+        int maxSalidas = -1;
+        int maxLlegadas = -1;
         int maxConexiones = -1;
-        Terminal maxTerminal = null;
+        Terminal termMasSalidas = null;
+        Terminal termMasLlegadas = null;
+        Terminal termMasConectada = null;
+
         for (int i = 0; i < terminales.length; i++) {
             if (terminales[i] == null) continue;
             int salidas = 0;
@@ -127,13 +132,22 @@ public class GestorRutas {
                 if (red.existsEdge(i, j)) salidas++;
                 if (red.existsEdge(j, i)) llegadas++;
             }
-            int total = salidas + llegadas;
-            if (total > maxConexiones) {
-                maxConexiones = total;
-                maxTerminal = terminales[i];
+            if (salidas > maxSalidas) {
+                maxSalidas = salidas;
+                termMasSalidas = terminales[i];
+            }
+            if (llegadas > maxLlegadas) {
+                maxLlegadas = llegadas;
+                termMasLlegadas = terminales[i];
+            }
+            if ((salidas + llegadas) > maxConexiones) {
+                maxConexiones = (salidas + llegadas);
+                termMasConectada = terminales[i];
             }
         }
-        return maxTerminal != null ? maxTerminal.toString() : "N/A";
+        System.out.println("Terminal con mayor número de salidas (" + maxSalidas + "): " + (termMasSalidas != null ? termMasSalidas.toString() : "N/A"));
+        System.out.println("Terminal con mayor número de llegadas (" + maxLlegadas + "): " + (termMasLlegadas != null ? termMasLlegadas.toString() : "N/A"));
+        System.out.println("Terminal con más conexiones directas (" + maxConexiones + "): " + (termMasConectada != null ? termMasConectada.toString() : "N/A"));
     }
 
     public void registrarUsoRuta(int idOrigen, int idDestino) {

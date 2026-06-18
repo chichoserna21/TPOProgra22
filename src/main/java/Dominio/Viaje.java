@@ -1,4 +1,4 @@
-package Dominio;
+package dominio;
 
 public class Viaje {
     private int id; // ID interno usado por los TDAs

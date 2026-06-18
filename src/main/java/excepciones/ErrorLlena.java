@@ -1,4 +1,4 @@
-package Excepcionees;
+package excepciones;
 
 public class ErrorLlena extends ErrorTDA {
     public ErrorLlena() {

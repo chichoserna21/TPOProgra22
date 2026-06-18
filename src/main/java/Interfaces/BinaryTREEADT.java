@@ -1,4 +1,4 @@
-package Interfaces;
+package interfaces;
 
 // Esta interfaz representa el TDA Arbol Binario.
 public interface BinaryTREEADT {

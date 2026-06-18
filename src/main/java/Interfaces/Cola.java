@@ -1,4 +1,4 @@
-package Interfaces;
+package interfaces;
 
 public interface Cola {
     // Esta interfaz representa el TDA Cola.

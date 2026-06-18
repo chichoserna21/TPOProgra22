@@ -1,6 +1,6 @@
-package Implementaciones.Dinamicas;
+package implementaciones.Dinamicas;
 
-import Interfaces.Grafos;
+import interfaces.Grafos;
 
 public class GrafoDinamico implements Grafos {
 

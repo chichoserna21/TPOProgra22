@@ -1,6 +1,6 @@
-package Implementaciones.Estaticas;
+package implementaciones.Estaticas;
 
-import Interfaces.Set;
+import interfaces.Set;
 import java.util.Random;
 
 public class ConjuntoEstatico implements Set {

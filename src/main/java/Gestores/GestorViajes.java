@@ -1,7 +1,7 @@
-package Gestores;
+package gestores;
 
-import Dominio.Viaje;
-import Interfaces.ColaConPrioridad;
+import dominio.Viaje;
+import interfaces.ColaConPrioridad;
 
 public class GestorViajes {
 
@@ -27,14 +27,16 @@ public class GestorViajes {
         return null;
     }
 
-    public void despacharProximo() {
+    public Viaje despacharProximo() {
         if (!colaDespacho.isEmpty()) {
             int viajeId = colaDespacho.getElement();
             colaDespacho.remove();
             Viaje v = viajesTotales[viajeId];
             System.out.println(">>> Despachando " + v.toString());
+            return v;
         } else {
             System.out.println("No hay viajes en cola para despachar.");
+            return null;
         }
     }
 

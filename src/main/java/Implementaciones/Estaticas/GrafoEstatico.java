@@ -1,6 +1,6 @@
-package Implementaciones.Estaticas;
+package implementaciones.Estaticas;
 
-import Interfaces.Grafos;
+import interfaces.Grafos;
 
 public class GrafoEstatico implements Grafos {
 

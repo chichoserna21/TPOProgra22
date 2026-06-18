@@ -1,4 +1,4 @@
-package Excepcionees;
+package excepciones;
 
 public class ErrorGrafoElementoInexistente extends ErrorTDA {
     public ErrorGrafoElementoInexistente() {

@@ -1,6 +1,6 @@
-package Implementaciones.Dinamicas;
+package implementaciones.Dinamicas;
 
-import Interfaces.Set;
+import interfaces.Set;
 import java.util.Random;
 
 public class ConjuntoDinamico implements Set {

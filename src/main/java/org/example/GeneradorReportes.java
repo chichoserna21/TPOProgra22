@@ -1,7 +1,7 @@
 package org.example;
 
-import Gestores.GestorFlota;
-import Gestores.GestorRutas;
+import gestores.GestorFlota;
+import gestores.GestorRutas;
 
 public class GeneradorReportes {
 
@@ -22,11 +22,9 @@ public class GeneradorReportes {
         }
     }
 
-    public void reporteConexionesYSaldasLlegadas() {
+    public void reporteConexionesYSalidasLlegadas() {
         System.out.println("\n=== REPORTE DE SALIDAS Y LLEGADAS ===");
-        String masConectada = rutas.obtenerTerminalMasConectada();
-        System.out.println("Terminal con mayor número de salidas y llegadas (Mayor cantidad de conexiones directas): ");
-        System.out.println("- " + masConectada);
+        rutas.reportarConexiones();
     }
 
     public void reporteUtilizacionMicros() {

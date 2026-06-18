@@ -1,6 +1,6 @@
-package Implementaciones.Estaticas;
+package implementaciones.Estaticas;
 
-import Interfaces.Diccionario;
+import interfaces.Diccionario;
 
 public class DiccionarioEstatico implements Diccionario {
 

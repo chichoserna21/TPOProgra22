@@ -1,4 +1,4 @@
-package Interfaces;
+package interfaces;
 
 // Esta interfaz representa el TDA Cola con Prioridad.
 public interface ColaConPrioridad {

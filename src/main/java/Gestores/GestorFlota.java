@@ -1,8 +1,8 @@
-package Gestores;
+package gestores;
 
-import Dominio.Micro;
-import Excepcionees.ErrorClaveInexistente;
-import Interfaces.Diccionario;
+import dominio.Micro;
+import excepciones.ErrorClaveInexistente;
+import interfaces.Diccionario;
 
 public class GestorFlota {
 

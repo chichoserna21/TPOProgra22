@@ -1,6 +1,6 @@
-package Implementaciones.Dinamicas;
+package implementaciones.Dinamicas;
 
-import Interfaces.ColaConPrioridad;
+import interfaces.ColaConPrioridad;
 
 public class ColaPrioridadDinamica implements ColaConPrioridad {
 

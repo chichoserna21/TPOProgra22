@@ -1,4 +1,4 @@
-package Interfaces;
+package interfaces;
 
 // Esta interfaz representa el TDA Diccionario Multiple.
 public interface MultipleDictionary {

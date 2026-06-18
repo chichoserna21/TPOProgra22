@@ -1,6 +1,6 @@
-package Implementaciones.Dinamicas;
+package implementaciones.Dinamicas;
 
-import Interfaces.Diccionario;
+import interfaces.Diccionario;
 
 public class DiccionarioDinamico implements Diccionario {
 
