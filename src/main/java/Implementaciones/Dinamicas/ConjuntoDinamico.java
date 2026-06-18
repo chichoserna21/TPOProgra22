@@ -1,4 +1,5 @@
-package implementaciones.Dinamicas;
+package implementaciones.dinamicas;
+import excepciones.ErrorVacia;
 
 import interfaces.Set;
 import java.util.Random;
@@ -40,7 +41,7 @@ public class ConjuntoDinamico implements Set {
     @Override
     public int choose() {
         if (isEmpty()) {
-            throw new Excepcionees.ErrorVacia();
+            throw new ErrorVacia();
         }
         int index = random.nextInt(count);
         Node current = head;

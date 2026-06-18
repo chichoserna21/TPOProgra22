@@ -1,4 +1,5 @@
 package dominio;
+import excepciones.ErrorDominioInvalido;
 
 public class Fecha {
     private int dia;
@@ -7,7 +8,7 @@ public class Fecha {
 
     public Fecha(int dia, int mes, int anio) {
         if (!esFechaValida(dia, mes, anio)) {
-            throw new Excepcionees.ErrorDominioInvalido("La fecha ingresada no es válida.");
+            throw new ErrorDominioInvalido("La fecha ingresada no es válida.");
         }
         this.dia = dia;
         this.mes = mes;

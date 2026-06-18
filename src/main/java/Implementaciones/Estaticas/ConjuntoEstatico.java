@@ -1,4 +1,6 @@
-package implementaciones.Estaticas;
+package implementaciones.estaticas;
+import excepciones.ErrorLlena;
+import excepciones.ErrorVacia;
 
 import interfaces.Set;
 import java.util.Random;
@@ -34,7 +36,7 @@ public class ConjuntoEstatico implements Set {
     @Override
     public int choose() {
         if (isEmpty()) {
-            throw new Excepcionees.ErrorVacia();
+            throw new ErrorVacia();
         }
         int index = random.nextInt(count);
         return array[index];
@@ -43,7 +45,7 @@ public class ConjuntoEstatico implements Set {
     @Override
     public void add(int value) {
         if (count >= array.length) {
-            throw new Excepcionees.ErrorLlena();
+            throw new ErrorLlena();
         }
         if (!exist(value)) {
             array[count] = value;

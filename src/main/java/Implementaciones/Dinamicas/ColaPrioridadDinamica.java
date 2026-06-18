@@ -1,4 +1,5 @@
-package implementaciones.Dinamicas;
+package implementaciones.dinamicas;
+import excepciones.ErrorVacia;
 
 import interfaces.ColaConPrioridad;
 
@@ -25,14 +26,14 @@ public class ColaPrioridadDinamica implements ColaConPrioridad {
     @Override
     public int getElement() {
         if (isEmpty()) {
-            throw new Excepcionees.ErrorVacia();
+            throw new ErrorVacia();
         }
         return head.value;
     }
     @Override
     public int getPriority() {
         if (isEmpty()) {
-            throw new Excepcionees.ErrorVacia();
+            throw new ErrorVacia();
         }
         return head.priority;
     }
@@ -57,7 +58,7 @@ public class ColaPrioridadDinamica implements ColaConPrioridad {
     @Override
     public void remove() {
         if (isEmpty()) {
-            throw new Excepcionees.ErrorVacia();
+            throw new ErrorVacia();
         }
         head = head.next;
     }

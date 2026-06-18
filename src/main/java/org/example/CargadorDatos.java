@@ -8,9 +8,9 @@ import dominio.Viaje;
 import gestores.GestorFlota;
 import gestores.GestorRutas;
 import gestores.GestorViajes;
-import implementaciones.Estaticas.ColaPrioridadEstatica;
-import implementaciones.Estaticas.DiccionarioEstatico;
-import implementaciones.Estaticas.GrafoEstatico;
+import implementaciones.estaticas.ColaPrioridadEstatica;
+import implementaciones.estaticas.DiccionarioEstatico;
+import implementaciones.estaticas.GrafoEstatico;
 
 public class CargadorDatos {
 

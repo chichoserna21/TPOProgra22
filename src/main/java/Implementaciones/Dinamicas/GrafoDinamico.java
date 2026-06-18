@@ -1,4 +1,5 @@
-package implementaciones.Dinamicas;
+package implementaciones.dinamicas;
+import excepciones.ErrorGrafoElementoInexistente;
 
 import interfaces.Grafos;
 
@@ -111,7 +112,7 @@ public class GrafoDinamico implements Grafos {
             newArista.next = origen.aristas;
             origen.aristas = newArista;
         } else {
-            throw new Excepcionees.ErrorGrafoElementoInexistente();
+            throw new ErrorGrafoElementoInexistente();
         }
     }
 
@@ -163,7 +164,7 @@ public class GrafoDinamico implements Grafos {
                 currentA = currentA.next;
             }
         }
-        throw new Excepcionees.ErrorGrafoElementoInexistente();
+        throw new ErrorGrafoElementoInexistente();
     }
 
     @Override

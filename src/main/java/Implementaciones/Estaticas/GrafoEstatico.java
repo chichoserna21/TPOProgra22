@@ -1,4 +1,6 @@
-package implementaciones.Estaticas;
+package implementaciones.estaticas;
+import excepciones.ErrorGrafoElementoInexistente;
+import excepciones.ErrorLlena;
 
 import interfaces.Grafos;
 
@@ -26,9 +28,7 @@ public class GrafoEstatico implements Grafos {
 
     @Override
     public Grafos getVertxs() {
-        // En vez de retornar una interfaz, retornaremos un sub-grafo que solo contenga los vertices
-        // O más bien un grafo nuevo sin aristas que tenga todos los vertices.
-        // Segun implementaciones clasicas de la UADE:
+        
         Grafos copiaVertices = new GrafoEstatico();
         for (int i = 0; i < cantidadVertices; i++) {
             copiaVertices.addVertx(vertices[i]);
@@ -39,7 +39,7 @@ public class GrafoEstatico implements Grafos {
     @Override
     public void addVertx(int vertex) {
         if (cantidadVertices >= MAX_VERTICES) {
-            throw new Excepcionees.ErrorLlena();
+            throw new ErrorLlena();
         }
         if (indexOf(vertex) == -1) {
             vertices[cantidadVertices] = vertex;
@@ -72,7 +72,7 @@ public class GrafoEstatico implements Grafos {
         if (indexOne != -1 && indexTwo != -1) {
             matrizAdyacencia[indexOne][indexTwo] = weight;
         } else {
-            throw new Excepcionees.ErrorGrafoElementoInexistente();
+            throw new ErrorGrafoElementoInexistente();
         }
     }
 
@@ -102,7 +102,7 @@ public class GrafoEstatico implements Grafos {
         if (indexOne != -1 && indexTwo != -1) {
             return matrizAdyacencia[indexOne][indexTwo];
         }
-        throw new Excepcionees.ErrorGrafoElementoInexistente();
+        throw new ErrorGrafoElementoInexistente();
     }
 
     @Override

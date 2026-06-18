@@ -1,4 +1,5 @@
-package implementaciones.Dinamicas;
+package implementaciones.dinamicas;
+import excepciones.ErrorClaveInexistente;
 
 import interfaces.Diccionario;
 
@@ -68,7 +69,7 @@ public class DiccionarioDinamico implements Diccionario {
     public int get(int key) {
         Node node = findNode(key);
         if (node == null) {
-            throw new Excepcionees.ErrorClaveInexistente();
+            throw new ErrorClaveInexistente();
         }
         return node.value;
     }

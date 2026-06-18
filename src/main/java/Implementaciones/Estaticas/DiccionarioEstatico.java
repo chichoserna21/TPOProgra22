@@ -1,4 +1,6 @@
-package implementaciones.Estaticas;
+package implementaciones.estaticas;
+import excepciones.ErrorClaveInexistente;
+import excepciones.ErrorLlena;
 
 import interfaces.Diccionario;
 
@@ -36,7 +38,7 @@ public class DiccionarioEstatico implements Diccionario {
             values[index] = value; // Pisa el contenido
         } else {
             if (count >= keys.length) {
-                throw new Excepcionees.ErrorLlena();
+                throw new ErrorLlena();
             }
             keys[count] = key;
             values[count] = value;
@@ -61,7 +63,7 @@ public class DiccionarioEstatico implements Diccionario {
     public int get(int key) {
         int index = indexOfKey(key);
         if (index == -1) {
-            throw new Excepcionees.ErrorClaveInexistente();
+            throw new ErrorClaveInexistente();
         }
         return values[index];
     }

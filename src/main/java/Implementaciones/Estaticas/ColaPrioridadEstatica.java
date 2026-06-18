@@ -1,4 +1,6 @@
-package implementaciones.Estaticas;
+package implementaciones.estaticas;
+import excepciones.ErrorLlena;
+import excepciones.ErrorVacia;
 
 import interfaces.ColaConPrioridad;
 
@@ -23,7 +25,7 @@ public class ColaPrioridadEstatica implements ColaConPrioridad {
     @Override
     public int getElement() {
         if (isEmpty()) {
-            throw new Excepcionees.ErrorVacia();
+            throw new ErrorVacia();
         }
         return elements[0];
     }
@@ -31,7 +33,7 @@ public class ColaPrioridadEstatica implements ColaConPrioridad {
     @Override
     public int getPriority() {
         if (isEmpty()) {
-            throw new Excepcionees.ErrorVacia();
+            throw new ErrorVacia();
         }
         return priorities[0];
     }
@@ -39,7 +41,7 @@ public class ColaPrioridadEstatica implements ColaConPrioridad {
     @Override
     public void add(int value, int priority) {
         if (count >= elements.length) {
-            throw new Excepcionees.ErrorLlena();
+            throw new ErrorLlena();
         }
         
         // Buscar la posición donde insertar (mayor prioridad primero, o menor numero = mayor prioridad)
@@ -63,7 +65,7 @@ public class ColaPrioridadEstatica implements ColaConPrioridad {
     @Override
     public void remove() {
         if (isEmpty()) {
-            throw new Excepcionees.ErrorVacia();
+            throw new ErrorVacia();
         }
         for (int i = 0; i < count - 1; i++) {
             elements[i] = elements[i + 1];
