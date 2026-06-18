@@ -1,6 +1,7 @@
 package Gestores;
 
 import Dominio.Micro;
+import Excepcionees.ErrorClaveInexistente;
 import Interfaces.Diccionario;
 
 public class GestorFlota {
@@ -32,20 +33,16 @@ public class GestorFlota {
         try {
             int estado = asignacionesFlota.get(microId);
             return estado == 0;
-        } catch (Exception e) {
+        } catch (ErrorClaveInexistente e) {
             return false;
         }
     }
 
     public void asignarViajeAMicro(int microId) {
-        if (estaDisponible(microId)) {
-            // Actualizamos en Diccionario a Ocupado (1)
-            asignacionesFlota.add(microId, 1);
-            // Incrementamos la estadística en el objeto
-            arrayMicros[microId].incrementarAsignaciones();
-        } else {
-            System.out.println("El micro " + arrayMicros[microId].getPatente() + " ya está asignado/ocupado.");
-        }
+        // Actualizamos en Diccionario a Ocupado (1)
+        asignacionesFlota.add(microId, 1);
+        // Incrementamos la estadística en el objeto
+        arrayMicros[microId].incrementarAsignaciones();
     }
 
     public void liberarMicro(int microId) {

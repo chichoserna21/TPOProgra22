@@ -2,7 +2,6 @@ package Gestores;
 
 import Dominio.Viaje;
 import Interfaces.ColaConPrioridad;
-import Implementaciones.Estaticas.ColaPrioridadEstatica; // o usar Pila auxiliar de otra interfaz, aquí usaré un arreglo temporal para simplificar o instanciar una cola auxiliar temporal
 
 public class GestorViajes {
 

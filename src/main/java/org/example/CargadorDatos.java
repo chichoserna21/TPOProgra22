@@ -81,6 +81,8 @@ public class CargadorDatos {
             
             Viaje v = new Viaje(i, orig, dest, mic, fec, prioridad);
             viajes.registrarViaje(v);
+            flota.asignarViajeAMicro(mic.getId());
+            rutas.registrarUsoRuta(orig.getId(), dest.getId());
         }
     }
 }

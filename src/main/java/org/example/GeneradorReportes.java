@@ -24,11 +24,9 @@ public class GeneradorReportes {
 
     public void reporteConexionesYSaldasLlegadas() {
         System.out.println("\n=== REPORTE DE SALIDAS Y LLEGADAS ===");
-        // Este método idealmente iría en GestorRutas, pero lo resolvemos delegando 
-        // a la estructura que ya conocemos
-        // Aquí simulamos los conteos (ya que la implementación requeriría métodos específicos en GestorRutas)
-        System.out.println("Terminal BUE: Mayor número de salidas y llegadas (Hub central).");
-        System.out.println("Terminal BUE: Mayor cantidad de conexiones directas.");
+        String masConectada = rutas.obtenerTerminalMasConectada();
+        System.out.println("Terminal con mayor número de salidas y llegadas (Mayor cantidad de conexiones directas): ");
+        System.out.println("- " + masConectada);
     }
 
     public void reporteUtilizacionMicros() {
@@ -44,5 +42,10 @@ public class GeneradorReportes {
             }
         }
         System.out.println("Utilización promedio de la flota: " + (double)totalAsignaciones / cantMicros + " viajes por micro.");
+    }
+
+    public void reporteRutasMasYMenosUtilizadas() {
+        System.out.println("\n=== REPORTE DE RUTAS MÁS Y MENOS UTILIZADAS ===");
+        rutas.reportarRutasMasYMenosUtilizadas();
     }
 }

@@ -2,16 +2,17 @@ package Gestores;
 
 import Dominio.Terminal;
 import Interfaces.Grafos;
-import Implementaciones.Estaticas.GrafoEstatico;
 
 public class GestorRutas {
 
     private Terminal[] terminales;
     private Grafos red;
+    private int[][] usosRutas;
 
     public GestorRutas(Grafos implementacionGrafo) {
         this.terminales = new Terminal[10]; // Como pide el escenario inicial
         this.red = implementacionGrafo;
+        this.usosRutas = new int[10][10];
     }
 
     public void agregarTerminal(Terminal terminal) {
@@ -113,5 +114,71 @@ public class GestorRutas {
             if (i < longitud) sb.append(" -> ");
         }
         System.out.println("Ruta encontrada: " + sb.toString() + " (" + longitud + " paradas)");
+    }
+
+    public String obtenerTerminalMasConectada() {
+        int maxConexiones = -1;
+        Terminal maxTerminal = null;
+        for (int i = 0; i < terminales.length; i++) {
+            if (terminales[i] == null) continue;
+            int salidas = 0;
+            int llegadas = 0;
+            for (int j = 0; j < terminales.length; j++) {
+                if (red.existsEdge(i, j)) salidas++;
+                if (red.existsEdge(j, i)) llegadas++;
+            }
+            int total = salidas + llegadas;
+            if (total > maxConexiones) {
+                maxConexiones = total;
+                maxTerminal = terminales[i];
+            }
+        }
+        return maxTerminal != null ? maxTerminal.toString() : "N/A";
+    }
+
+    public void registrarUsoRuta(int idOrigen, int idDestino) {
+        if (idOrigen >= 0 && idOrigen < 10 && idDestino >= 0 && idDestino < 10) {
+            usosRutas[idOrigen][idDestino]++;
+        }
+    }
+
+    public void reportarRutasMasYMenosUtilizadas() {
+        int max = -1;
+        int min = Integer.MAX_VALUE;
+        boolean hayRutas = false;
+        
+        for (int i = 0; i < terminales.length; i++) {
+            for (int j = 0; j < terminales.length; j++) {
+                if (red.existsEdge(i, j)) {
+                    hayRutas = true;
+                    int usos = usosRutas[i][j];
+                    if (usos > max) max = usos;
+                    if (usos < min) min = usos;
+                }
+            }
+        }
+        
+        if (!hayRutas) {
+            System.out.println("No hay rutas registradas.");
+            return;
+        }
+
+        System.out.println("--- Rutas Más Utilizadas (" + max + " usos) ---");
+        for (int i = 0; i < terminales.length; i++) {
+            for (int j = 0; j < terminales.length; j++) {
+                if (red.existsEdge(i, j) && usosRutas[i][j] == max) {
+                    System.out.println(terminales[i].getCodigo() + " -> " + terminales[j].getCodigo());
+                }
+            }
+        }
+        
+        System.out.println("--- Rutas Menos Utilizadas (" + min + " usos) ---");
+        for (int i = 0; i < terminales.length; i++) {
+            for (int j = 0; j < terminales.length; j++) {
+                if (red.existsEdge(i, j) && usosRutas[i][j] == min) {
+                    System.out.println(terminales[i].getCodigo() + " -> " + terminales[j].getCodigo());
+                }
+            }
+        }
     }
 }

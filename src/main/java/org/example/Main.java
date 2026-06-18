@@ -44,8 +44,9 @@ public class Main {
         System.out.println("Despachando siguiente viaje (debería ser el 15 si es prioridad 1):");
         viajes.despacharProximo();
 
-        // 4. Reporte final de Flota
+        // 4. Reporte final de Flota y Rutas
         reportes.reporteUtilizacionMicros();
+        reportes.reporteRutasMasYMenosUtilizadas();
         
         System.out.println("\n=== FIN DE LA SIMULACIÓN ===");
     }
